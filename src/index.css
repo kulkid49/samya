@@ -47,6 +47,20 @@
     --radius: 0.75rem;
   }
 
+  html.light {
+    --bg-primary: #f6f3ee;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-input: #ece8df;
+    --text-primary: #111111;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #666666;
+    --white-hover: #111111;
+    --blue-hover: #2c4ed9;
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+  }
+
   body {
     font-family: 'Space Grotesk', sans-serif;
     background-color: var(--bg-primary);
@@ -58,6 +72,11 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  html.light body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
   }
 }
 
