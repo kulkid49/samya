@@ -99,9 +99,13 @@ export default function Navigation() {
       </nav>
 
       {mobileOpen && (
-        <div className="theme-preserve fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center gap-8">
+        <div
+          className={`theme-preserve fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-8 ${
+            isLight ? 'bg-white' : 'bg-black'
+          }`}
+        >
           <button
-            className="absolute top-6 right-6 text-white"
+            className={isLight ? 'absolute top-6 right-6 text-black' : 'absolute top-6 right-6 text-white'}
             onClick={() => setMobileOpen(false)}
           >
             <X size={28} />
@@ -110,7 +114,9 @@ export default function Navigation() {
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="font-grotesk text-2xl font-medium text-white hover:text-[#CCCCCC] transition-colors"
+              className={`font-grotesk text-2xl font-medium transition-colors ${
+                isLight ? 'text-black hover:text-[#4A4A4A]' : 'text-white hover:text-[#CCCCCC]'
+              }`}
             >
               {link.label}
             </button>
@@ -120,8 +126,8 @@ export default function Navigation() {
             onClick={toggleTheme}
             className={`inline-flex items-center gap-2 rounded-full border-[1.5px] px-5 py-2.5 transition-all duration-300 ${
               isLight
-                ? 'border-white text-white hover:bg-white hover:text-black'
-                : 'border-black text-black hover:bg-black hover:text-white'
+                ? 'border-black text-black hover:bg-black hover:text-white'
+                : 'border-white text-white hover:bg-white hover:text-black'
             }`}
           >
             {isLight ? <Moon size={18} /> : <SunMedium size={18} />}
@@ -132,7 +138,11 @@ export default function Navigation() {
               setMobileOpen(false);
               openModal();
             }}
-            className="font-grotesk text-xl font-medium text-white border-[1.5px] border-white rounded-full px-8 py-3 hover:bg-white hover:text-black transition-all duration-300 mt-4"
+            className={`font-grotesk text-xl font-medium rounded-full px-8 py-3 transition-all duration-300 mt-4 ${
+              isLight
+                ? 'text-black border-[1.5px] border-black hover:bg-black hover:text-white'
+                : 'text-white border-[1.5px] border-white hover:bg-white hover:text-black'
+            }`}
           >
             Let&apos;s Talk
           </button>
