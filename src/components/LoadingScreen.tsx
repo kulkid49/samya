@@ -9,14 +9,15 @@ interface LoadingScreenProps {
 export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const lettersRef = useRef<HTMLSpanElement[]>([]);
-  const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme } = useTheme();
+  const [isLight, setIsLight] = useState(() => {
+    if (typeof document === 'undefined') return false;
+    return document.documentElement.classList.contains('light');
+  });
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isLight = mounted && (resolvedTheme ?? theme) === 'light';
+    setIsLight((resolvedTheme ?? theme) === 'light');
+  }, [resolvedTheme, theme]);
 
   useEffect(() => {
     const letters = lettersRef.current.filter(Boolean);
