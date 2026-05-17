@@ -73,10 +73,10 @@ export default function Navigation() {
               type="button"
               onClick={toggleTheme}
               aria-label={isLight ? 'Switch to night mode' : 'Switch to day mode'}
-              className={`inline-flex items-center justify-center rounded-full border-[1.5px] px-3.5 py-2.5 transition-all duration-300 ${
+              className={`inline-flex items-center justify-center rounded-full border-[1.5px] px-7 py-2.5 font-grotesk text-base font-medium transition-all duration-300 ${
                 isLight
-                  ? 'border-white text-white hover:bg-white hover:text-black'
-                  : 'border-black text-black hover:bg-black hover:text-white'
+                  ? 'border-black text-black hover:bg-black hover:text-white'
+                  : 'border-white text-white hover:bg-white hover:text-black'
               }`}
             >
               {isLight ? <Moon size={18} /> : <SunMedium size={18} />}
