@@ -135,6 +135,28 @@ function ProficiencyBar({ label, percent, color, delay }: { label: string; perce
 export default function SkillsSection() {
   const headingRef = useScrollAnimation<HTMLParagraphElement>();
   const titleRef = useScrollAnimation<HTMLHeadingElement>();
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = contentRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = el.querySelectorAll<HTMLElement>('.skills-animate-item');
+          items.forEach((item, i) => {
+            setTimeout(() => {
+              item.classList.add('scroll-visible');
+            }, i * 100);
+          });
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -80px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="skills" className="bg-black py-24 px-6 lg:px-8">
@@ -152,13 +174,14 @@ export default function SkillsSection() {
           Expertise Across the Spectrum
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+        <div ref={contentRef} className="mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {skillCategories.map((cat, i) => {
             const Icon = cat.icon;
             return (
               <div
                 key={i}
-                className="scroll-hidden bg-[#1A1A1A] rounded-xl p-8"
+                className="skills-animate-item scroll-hidden bg-[#1A1A1A] rounded-xl p-8"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-center gap-3 mb-5">
@@ -178,7 +201,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Core Competencies Summary */}
-        <div className="scroll-hidden mt-6 p-8 rounded-xl border border-white/[0.06]" style={{
+        <div className="skills-animate-item scroll-hidden mt-6 p-8 rounded-xl border border-white/[0.06]" style={{
           background: 'linear-gradient(135deg, rgba(59,93,255,0.08) 0%, rgba(28,195,137,0.08) 50%, rgba(126,67,255,0.08) 100%)',
         }}>
           <div className="flex items-center gap-3 mb-6">
@@ -192,6 +215,7 @@ export default function SkillsSection() {
               <ProficiencyBar key={i} {...p} delay={i * 200} />
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>

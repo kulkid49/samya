@@ -1,4 +1,5 @@
 import { GraduationCap, Award } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const education = [
@@ -111,6 +112,28 @@ const certifications: Certification[] = [
 export default function EducationSection() {
   const headingRef = useScrollAnimation<HTMLParagraphElement>();
   const titleRef = useScrollAnimation<HTMLHeadingElement>();
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = contentRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = el.querySelectorAll<HTMLElement>('.education-animate-item');
+          items.forEach((item, i) => {
+            setTimeout(() => {
+              item.classList.add('scroll-visible');
+            }, i * 100);
+          });
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -80px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="education" className="bg-[#111111] py-24 px-6 lg:px-8">
@@ -128,7 +151,7 @@ export default function EducationSection() {
           Building a Strong Foundation
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+        <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           {/* Education Column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -139,7 +162,7 @@ export default function EducationSection() {
               {education.map((edu, i) => (
                 <div
                   key={i}
-                  className="scroll-hidden bg-[#1A1A1A] rounded-xl p-7"
+                  className="education-animate-item scroll-hidden bg-[#1A1A1A] rounded-xl p-7"
                   style={{
                     borderLeft: `4px solid ${edu.accent}`,
                     animationDelay: `${i * 100}ms`,
@@ -165,7 +188,7 @@ export default function EducationSection() {
               {certifications.map((cert, i) => (
                 <div
                   key={i}
-                  className="scroll-hidden bg-[#1A1A1A] rounded-xl p-7"
+                  className="education-animate-item scroll-hidden bg-[#1A1A1A] rounded-xl p-7"
                   style={{
                     borderLeft: `4px solid ${cert.accent}`,
                     animationDelay: `${i * 100}ms`,
