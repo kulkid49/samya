@@ -113,6 +113,54 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
             `,
           }}
         />
+        <div
+          aria-hidden="true"
+          className="hidden md:block absolute right-6 top-24 lg:right-12 lg:top-28 w-[320px] h-[320px] lg:w-[380px] lg:h-[380px] opacity-70 mix-blend-screen hero-ai-graphic"
+        >
+          <svg viewBox="0 0 400 400" className="w-full h-full">
+            <defs>
+              <linearGradient id="heroLine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#3B5DFF" stopOpacity="0.9" />
+                <stop offset="50%" stopColor="#1CC389" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#FA900E" stopOpacity="0.75" />
+              </linearGradient>
+              <filter id="heroGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <path
+              d="M80 115 C135 60, 215 60, 260 120 S340 210, 310 270 215 335, 150 305 55 220, 80 115 Z"
+              fill="none"
+              stroke="url(#heroLine)"
+              strokeWidth="2"
+              strokeOpacity="0.7"
+              filter="url(#heroGlow)"
+              className="hero-ai-stroke"
+            />
+
+            <path
+              d="M120 250 L175 195 L235 230 L285 175"
+              fill="none"
+              stroke="#7E43FF"
+              strokeWidth="2"
+              strokeOpacity="0.55"
+              className="hero-ai-stroke hero-ai-stroke-2"
+            />
+
+            <circle cx="120" cy="250" r="7" fill="#3B5DFF" className="hero-ai-node hero-ai-node-1" />
+            <circle cx="175" cy="195" r="6" fill="#1CC389" className="hero-ai-node hero-ai-node-2" />
+            <circle cx="235" cy="230" r="6" fill="#FA900E" className="hero-ai-node hero-ai-node-3" />
+            <circle cx="285" cy="175" r="7" fill="#7E43FF" className="hero-ai-node hero-ai-node-4" />
+
+            <circle cx="225" cy="115" r="70" fill="rgba(59,93,255,0.08)" className="hero-ai-orbit" />
+            <circle cx="225" cy="115" r="38" fill="rgba(28,195,137,0.08)" className="hero-ai-orbit hero-ai-orbit-2" />
+          </svg>
+        </div>
       </div>
 
       {/* Content */}

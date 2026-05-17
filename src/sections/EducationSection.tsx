@@ -1,43 +1,69 @@
 import { GraduationCap, Award } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-const education = [
+type EducationItem = {
+  institution: string;
+  degree: string;
+  details: string;
+  accent: string;
+};
+
+type CertificationItem = {
+  title: string;
+  accent: string;
+  link?: string;
+};
+
+const education: EducationItem[] = [
   {
-    institution: 'Indian Institute of Engineering Science and Technology, Shibpur',
-    degree: 'Bachelor of Engineering in Computer Science and Technology',
-    details: '2009 – 2013 · CGPA: 6.0 · Degree: 2014',
+    institution: 'Indian Institute of Engineering Science and Technology, Shibpur (Formerly Bengal Engineering and Science University)',
+    degree: 'Graduate — Bachelor of Engineering in Computer Science and Technology',
+    details: 'Batch: 2009 – 2013 · Location: Shibpur · CGPA: 6.0 · Degree: 2014',
     accent: '#3B5DFF',
   },
   {
-    institution: 'Bidhan Chandra Institution, Durgapur',
-    degree: 'Higher Secondary (WBCHSE) — Science (Physics, Chemistry, Mathematics, Computer Science)',
-    details: '2007 – 2009 · 71%',
+    institution: 'Bidhan Chandra Institution',
+    degree: 'Higher Secondary School (WBCHSE) — Science (Physics, Chemistry, Mathematics) + Computer Science; English & Bengali',
+    details: 'Batch: 2007 – 2009 · Location: Durgapur · 71% · Degree: 2009',
     accent: '#1CC389',
   },
   {
-    institution: "St. Xavier's School, Durgapur",
-    degree: 'Secondary (ICSE) — English, Bengali, History, Geography, Science, Mathematics, Economics',
-    details: '1996 – 2007 · 81%',
+    institution: "St. Xavier's School",
+    degree: 'Secondary School (ICSE) — English, Bengali, History, Geography, Science, Mathematics + Economics',
+    details: 'Batch: 1996 – 2007 · Location: Durgapur · 81% · Degree: 2007',
     accent: '#FA900E',
   },
 ];
 
-const certifications = [
+const certifications: CertificationItem[] = [
   {
     title: 'Google Analytics Individual Qualification',
     link: 'https://drive.google.com/file/d/1IMscgU2kkVtBMcG1ZP8bvTiMlCgN9w4E/view?usp=sharing',
     accent: '#7E43FF',
   },
   {
-    title: 'Advanced Google Analytics',
-    link: 'https://drive.google.com/file/d/1PT141cM2RgciSa9qcW6XCpsaTMgA5XjZ/view?usp=sharing',
+    title: 'Introduction to GitHub Copilot',
     accent: '#3B5DFF',
   },
   {
-    title: 'Google Analytics for Beginners',
-    link: 'https://drive.google.com/file/d/1LAk5f6AtfTCwKTOsy9rNfMykWkKxeRBE/view?usp=sharing',
+    title: 'Responsible AI with GitHub Copilot',
     accent: '#1CC389',
   },
+  { title: 'Summarize and simplify information with Microsoft 365 Copilot', accent: '#FA900E' },
+  { title: 'Edit and transform content with Microsoft 365 Copilot', accent: '#7E43FF' },
+  { title: 'Describe cost management in Azure', accent: '#3B5DFF' },
+  { title: 'Get started with speech in Azure', accent: '#1CC389' },
+  { title: 'Get started with AI agent development on Azure', accent: '#FA900E' },
+  { title: 'Describe cloud computing', accent: '#7E43FF' },
+  { title: 'Introduction to generative AI concepts', accent: '#3B5DFF' },
+  { title: 'Get started with Microsoft Copilot Studio', accent: '#1CC389' },
+  { title: 'Plan and prepare to develop AI solutions on Azure', accent: '#FA900E' },
+  { title: 'Describe the benefits of using cloud services', accent: '#7E43FF' },
+  { title: 'Craft effective prompts for Microsoft 365 Copilot', accent: '#3B5DFF' },
+  { title: 'Ask questions and analyze content with Microsoft 365 Copilot', accent: '#1CC389' },
+  { title: 'Introduction to prompt engineering with GitHub Copilot', accent: '#FA900E' },
+  { title: 'Introduction to AI concepts', accent: '#7E43FF' },
+  { title: 'Use AI for everyday tasks', accent: '#3B5DFF' },
 ];
 
 export default function EducationSection() {
@@ -106,14 +132,16 @@ export default function EducationSection() {
                   <p className="font-grotesk text-base font-medium text-white">
                     {cert.title}
                   </p>
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-grotesk text-sm text-brand-blue hover:underline mt-2 inline-block"
-                  >
-                    View Certificate →
-                  </a>
+                  {cert.link ? (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-grotesk text-sm text-brand-blue hover:underline mt-2 inline-block"
+                    >
+                      View Certificate →
+                    </a>
+                  ) : null}
                 </div>
               ))}
             </div>

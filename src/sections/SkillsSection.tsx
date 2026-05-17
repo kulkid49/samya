@@ -143,7 +143,7 @@ export default function SkillsSection() {
           ref={headingRef}
           className="scroll-hidden font-grotesk text-base font-medium text-[#7F7F7F] tracking-[2px] uppercase text-center"
         >
-          Skills & Proficiencies
+          Core Competencies
         </p>
         <h2
           ref={titleRef}
