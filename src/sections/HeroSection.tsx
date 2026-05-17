@@ -83,7 +83,7 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-[100dvh] overflow-hidden bg-black"
+      className="relative min-h-[100dvh] overflow-hidden bg-[#050505]"
     >
       <div className="absolute inset-0 z-[1]">
         <div className="absolute inset-0 hero-ai-bg" aria-hidden="true" />
@@ -95,11 +95,11 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
         >
           <defs>
             <linearGradient id="heroAiGradient" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stopColor="#3B5DFF" stopOpacity="0.95" />
-              <stop offset="0.25" stopColor="#1CC389" stopOpacity="0.85" />
-              <stop offset="0.5" stopColor="#FA900E" stopOpacity="0.8" />
-              <stop offset="0.72" stopColor="#F03030" stopOpacity="0.78" />
-              <stop offset="1" stopColor="#7E43FF" stopOpacity="0.9" />
+              <stop offset="0" stopColor="#FF2D2D" stopOpacity="1" />
+              <stop offset="0.22" stopColor="#21E56A" stopOpacity="1" />
+              <stop offset="0.44" stopColor="#1F7BFF" stopOpacity="1" />
+              <stop offset="0.68" stopColor="#9B45FF" stopOpacity="1" />
+              <stop offset="1" stopColor="#FF9A1F" stopOpacity="1" />
             </linearGradient>
           </defs>
           <g className="hero-ai-lines" stroke="url(#heroAiGradient)" strokeWidth="1.25" strokeLinecap="round">
@@ -132,7 +132,7 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.55) 100%)',
+            background: 'linear-gradient(to bottom, rgba(5,5,5,0.08) 0%, rgba(5,5,5,0.42) 100%)',
           }}
         />
       </div>
@@ -142,11 +142,12 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(circle at 20% 30%, rgba(59,93,255,0.2) 0%, transparent 55%),
-              radial-gradient(circle at 80% 20%, rgba(250,144,14,0.18) 0%, transparent 55%),
-              radial-gradient(circle at 15% 85%, rgba(28,195,137,0.16) 0%, transparent 55%),
-              radial-gradient(circle at 85% 80%, rgba(126,67,255,0.18) 0%, transparent 55%),
-              radial-gradient(circle at 55% 55%, rgba(240,48,48,0.16) 0%, transparent 58%)
+              radial-gradient(circle at 18% 28%, rgba(255,45,45,0.32) 0%, transparent 48%),
+              radial-gradient(circle at 80% 22%, rgba(33,229,106,0.3) 0%, transparent 48%),
+              radial-gradient(circle at 18% 82%, rgba(31,123,255,0.3) 0%, transparent 50%),
+              radial-gradient(circle at 82% 78%, rgba(155,69,255,0.3) 0%, transparent 50%),
+              radial-gradient(circle at 55% 52%, rgba(255,154,31,0.28) 0%, transparent 52%),
+              linear-gradient(135deg, rgba(255,45,45,0.08) 0%, rgba(33,229,106,0.08) 25%, rgba(31,123,255,0.08) 50%, rgba(155,69,255,0.08) 75%, rgba(255,154,31,0.08) 100%)
             `,
           }}
         />
