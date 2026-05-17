@@ -44,7 +44,7 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[8888] h-20 flex items-center transition-all duration-300 ${
+        className={`theme-preserve fixed top-0 left-0 right-0 z-[8888] h-20 flex items-center transition-all duration-300 ${
           scrolled ? 'bg-black/85 backdrop-blur-xl shadow-nav' : 'bg-transparent'
         }`}
       >
@@ -95,7 +95,7 @@ export default function Navigation() {
       </nav>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center gap-8">
+        <div className="theme-preserve fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center gap-8">
           <button
             className="absolute top-6 right-6 text-white"
             onClick={() => setMobileOpen(false)}
