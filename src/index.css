@@ -85,58 +85,58 @@
     50% { transform: translateY(8px); }
   }
 
-  .hero-ai-graphic {
-    animation: hero-float 9s ease-in-out infinite;
-    transform-origin: 50% 50%;
+  .hero-ai-bg {
+    background:
+      radial-gradient(circle at 20% 25%, rgba(59, 93, 255, 0.35) 0%, transparent 55%),
+      radial-gradient(circle at 80% 20%, rgba(28, 195, 137, 0.28) 0%, transparent 55%),
+      radial-gradient(circle at 15% 85%, rgba(250, 144, 14, 0.22) 0%, transparent 55%),
+      radial-gradient(circle at 85% 85%, rgba(126, 67, 255, 0.26) 0%, transparent 55%),
+      radial-gradient(circle at 55% 55%, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+    background-size: 200% 200%;
+    filter: blur(22px);
+    opacity: 0.9;
+    transform: scale(1.05);
+    animation: hero-ai-bg-shift 12s ease-in-out infinite alternate;
   }
 
-  .hero-ai-stroke {
-    stroke-dasharray: 10 10;
-    animation: hero-dash 10s linear infinite;
+  @keyframes hero-ai-bg-shift {
+    0% { background-position: 0% 40%; }
+    100% { background-position: 100% 60%; }
   }
 
-  .hero-ai-stroke-2 {
-    stroke-dasharray: 16 10;
-    animation-duration: 14s;
+  .hero-ai-network {
+    opacity: 0.55;
+    mix-blend-mode: screen;
+  }
+
+  .hero-ai-lines path {
+    stroke-dasharray: 10 14;
+    animation: hero-ai-dash 22s linear infinite;
+  }
+
+  @keyframes hero-ai-dash {
+    0% { stroke-dashoffset: 0; opacity: 0.65; }
+    100% { stroke-dashoffset: 320; opacity: 0.85; }
   }
 
   .hero-ai-node {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.12));
-    animation: hero-pulse 2.8s ease-in-out infinite;
+    fill: rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0 0 10px rgba(59, 93, 255, 0.55));
+    transform-origin: center;
+    animation: hero-ai-node-pulse 2.8s ease-in-out infinite;
   }
 
-  .hero-ai-node-2 { animation-delay: 0.3s; }
-  .hero-ai-node-3 { animation-delay: 0.6s; }
-  .hero-ai-node-4 { animation-delay: 0.9s; }
-
-  .hero-ai-orbit {
-    animation: hero-rotate 18s linear infinite;
-    transform-origin: 225px 115px;
+  @keyframes hero-ai-node-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.7); opacity: 1; }
   }
 
-  .hero-ai-orbit-2 {
-    animation-duration: 26s;
-    animation-direction: reverse;
-  }
-
-  @keyframes hero-float {
-    0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.65; }
-    50% { transform: translate3d(0, 12px, 0) scale(1.02); opacity: 0.78; }
-  }
-
-  @keyframes hero-dash {
-    0% { stroke-dashoffset: 0; }
-    100% { stroke-dashoffset: -240; }
-  }
-
-  @keyframes hero-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.92; }
-    50% { transform: scale(1.14); opacity: 1; }
-  }
-
-  @keyframes hero-rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-ai-bg,
+    .hero-ai-lines path,
+    .hero-ai-node {
+      animation: none;
+    }
   }
 
   .scroll-hidden {

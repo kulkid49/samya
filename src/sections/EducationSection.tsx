@@ -1,41 +1,38 @@
 import { GraduationCap, Award } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-type EducationItem = {
-  institution: string;
-  degree: string;
-  details: string;
-  accent: string;
-};
-
-type CertificationItem = {
-  title: string;
-  accent: string;
-  link?: string;
-};
-
-const education: EducationItem[] = [
+const education = [
   {
-    institution: 'Indian Institute of Engineering Science and Technology, Shibpur (Formerly Bengal Engineering and Science University)',
-    degree: 'Graduate — Bachelor of Engineering in Computer Science and Technology',
-    details: 'Batch: 2009 – 2013 · Location: Shibpur · CGPA: 6.0 · Degree: 2014',
+    institution:
+      'Indian Institute of Engineering Science and Technology, Shibpur (Formerly Bengal Engineering and Science University)',
+    degree: 'Grad · Batch of 2009 – 2013 · Shibpur',
+    details:
+      'Pursued Bachelor of Engineering in Computer Science and Technology with a CGPA of 6 and holds the degree for the year 2014.',
     accent: '#3B5DFF',
   },
   {
     institution: 'Bidhan Chandra Institution',
-    degree: 'Higher Secondary School (WBCHSE) — Science (Physics, Chemistry, Mathematics) + Computer Science; English & Bengali',
-    details: 'Batch: 2007 – 2009 · Location: Durgapur · 71% · Degree: 2009',
+    degree: 'Higher Secondary School (WBCHSE) · Batch of 2007 – 2009 · Durgapur',
+    details:
+      'Completed High School with Science Subjects (Physics, Chemistry, and Mathematics) along with the Compulsory Subjects (English and Bengali) and the Additional Subject (Computer Science) with a percentage of marks obtained of 71 and holds the degree for the year 2009.',
     accent: '#1CC389',
   },
   {
     institution: "St. Xavier's School",
-    degree: 'Secondary School (ICSE) — English, Bengali, History, Geography, Science, Mathematics + Economics',
-    details: 'Batch: 1996 – 2007 · Location: Durgapur · 81% · Degree: 2007',
+    degree: 'Secondary School (ICSE) · Batch of 1996 – 2007 · Durgapur',
+    details:
+      'Completed Secondary School with Compulsory Subjects (English, Bengali, History, Geography, Science, and Mathematics) along with the Additional Subject (Economics) with a percentage of marks obtained of 81 and holds the degree for the year 2007.',
     accent: '#FA900E',
   },
 ];
 
-const certifications: CertificationItem[] = [
+type Certification = {
+  title: string;
+  link?: string;
+  accent: string;
+};
+
+const certifications: Certification[] = [
   {
     title: 'Google Analytics Individual Qualification',
     link: 'https://drive.google.com/file/d/1IMscgU2kkVtBMcG1ZP8bvTiMlCgN9w4E/view?usp=sharing',
@@ -49,21 +46,66 @@ const certifications: CertificationItem[] = [
     title: 'Responsible AI with GitHub Copilot',
     accent: '#1CC389',
   },
-  { title: 'Summarize and simplify information with Microsoft 365 Copilot', accent: '#FA900E' },
-  { title: 'Edit and transform content with Microsoft 365 Copilot', accent: '#7E43FF' },
-  { title: 'Describe cost management in Azure', accent: '#3B5DFF' },
-  { title: 'Get started with speech in Azure', accent: '#1CC389' },
-  { title: 'Get started with AI agent development on Azure', accent: '#FA900E' },
-  { title: 'Describe cloud computing', accent: '#7E43FF' },
-  { title: 'Introduction to generative AI concepts', accent: '#3B5DFF' },
-  { title: 'Get started with Microsoft Copilot Studio', accent: '#1CC389' },
-  { title: 'Plan and prepare to develop AI solutions on Azure', accent: '#FA900E' },
-  { title: 'Describe the benefits of using cloud services', accent: '#7E43FF' },
-  { title: 'Craft effective prompts for Microsoft 365 Copilot', accent: '#3B5DFF' },
-  { title: 'Ask questions and analyze content with Microsoft 365 Copilot', accent: '#1CC389' },
-  { title: 'Introduction to prompt engineering with GitHub Copilot', accent: '#FA900E' },
-  { title: 'Introduction to AI concepts', accent: '#7E43FF' },
-  { title: 'Use AI for everyday tasks', accent: '#3B5DFF' },
+  {
+    title: 'Summarize and simplify information with Microsoft 365 Copilot',
+    accent: '#FA900E',
+  },
+  {
+    title: 'Edit and transform content with Microsoft 365 Copilot',
+    accent: '#7E43FF',
+  },
+  {
+    title: 'Describe cost management in Azure',
+    accent: '#3B5DFF',
+  },
+  {
+    title: 'Get started with speech in Azure',
+    accent: '#1CC389',
+  },
+  {
+    title: 'Get started with AI agent development on Azure',
+    accent: '#FA900E',
+  },
+  {
+    title: 'Describe cloud computing',
+    accent: '#7E43FF',
+  },
+  {
+    title: 'Introduction to generative AI concepts',
+    accent: '#3B5DFF',
+  },
+  {
+    title: 'Get started with Microsoft Copilot Studio',
+    accent: '#1CC389',
+  },
+  {
+    title: 'Plan and prepare to develop AI solutions on Azure',
+    accent: '#FA900E',
+  },
+  {
+    title: 'Describe the benefits of using cloud services',
+    accent: '#7E43FF',
+  },
+  {
+    title: 'Craft effective prompts for Microsoft 365 Copilot',
+    accent: '#3B5DFF',
+  },
+  {
+    title: 'Ask questions and analyze content with Microsoft 365 Copilot',
+    accent: '#1CC389',
+  },
+  {
+    title: 'Introduction to prompt engineering with GitHub Copilot',
+    accent: '#FA900E',
+  },
+  {
+    title: 'Introduction to AI concepts',
+    accent: '#7E43FF',
+  },
+  {
+    title: 'Use AI for everyday tasks',
+    accent: '#3B5DFF',
+  },
 ];
 
 export default function EducationSection() {
