@@ -36,7 +36,6 @@ type Certification = {
 const certifications: Certification[] = [
   {
     title: 'Google Analytics Individual Qualification',
-    link: 'https://drive.google.com/file/d/1IMscgU2kkVtBMcG1ZP8bvTiMlCgN9w4E/view?usp=sharing',
     accent: '#7E43FF',
   },
   {
