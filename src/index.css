@@ -87,15 +87,11 @@
 
   .hero-ai-bg {
     background:
-      linear-gradient(135deg, rgba(255, 45, 45, 0.2) 0%, rgba(33, 229, 106, 0.18) 25%, rgba(31, 123, 255, 0.18) 50%, rgba(155, 69, 255, 0.18) 75%, rgba(255, 154, 31, 0.2) 100%),
-      radial-gradient(circle at 18% 24%, rgba(255, 45, 45, 0.82) 0%, transparent 42%),
-      radial-gradient(circle at 82% 18%, rgba(33, 229, 106, 0.76) 0%, transparent 42%),
-      radial-gradient(circle at 14% 86%, rgba(31, 123, 255, 0.78) 0%, transparent 42%),
-      radial-gradient(circle at 86% 84%, rgba(155, 69, 255, 0.8) 0%, transparent 42%),
-      radial-gradient(circle at 55% 60%, rgba(255, 154, 31, 0.78) 0%, transparent 46%),
-      radial-gradient(circle at 52% 48%, rgba(255, 255, 255, 0.08) 0%, transparent 62%);
+      radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.16) 0%, transparent 42%),
+      radial-gradient(circle at 50% 68%, rgba(0, 0, 0, 0.3) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.18) 100%);
     background-size: 200% 200%;
-    filter: blur(22px) saturate(1.9) brightness(1.05);
+    filter: blur(22px) grayscale(1) saturate(0.15) brightness(0.9);
     opacity: 1;
     transform: scale(1.08);
     animation: hero-ai-bg-shift 12s ease-in-out infinite alternate;
@@ -107,12 +103,12 @@
   }
 
   .hero-ai-network {
-    opacity: 0.88;
-    mix-blend-mode: screen;
+    opacity: 0;
+    mix-blend-mode: normal;
   }
 
   .hero-hero-video {
-    filter: saturate(1.15) contrast(1.05) brightness(0.92);
+    filter: grayscale(1) saturate(0) contrast(1.05) brightness(0.82);
   }
 
   .hero-ai-lines path {
@@ -126,13 +122,10 @@
   }
 
   .hero-ai-node {
-    fill: rgba(255, 255, 255, 0.95);
+    fill: rgba(255, 255, 255, 0.9);
     filter:
-      drop-shadow(0 0 10px rgba(255, 45, 45, 0.65))
-      drop-shadow(0 0 10px rgba(33, 229, 106, 0.55))
-      drop-shadow(0 0 10px rgba(31, 123, 255, 0.5))
-      drop-shadow(0 0 10px rgba(155, 69, 255, 0.45))
-      drop-shadow(0 0 10px rgba(255, 154, 31, 0.45));
+      drop-shadow(0 0 10px rgba(255, 255, 255, 0.35))
+      drop-shadow(0 0 10px rgba(0, 0, 0, 0.18));
     transform-origin: center;
     animation: hero-ai-node-pulse 2.8s ease-in-out infinite;
   }
