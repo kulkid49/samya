@@ -32,6 +32,10 @@ export default function Navigation() {
 
   const isLight = mounted && (resolvedTheme ?? theme) === 'light';
   const toggleTheme = () => setTheme(isLight ? 'dark' : 'light');
+  const headerTextClass = isLight ? 'text-black hover:text-[#4A4A4A]' : 'text-white hover:text-[#CCCCCC]';
+  const headerButtonClass = isLight
+    ? 'border-black text-black hover:bg-black hover:text-white'
+    : 'border-white text-white hover:bg-white hover:text-black';
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -51,7 +55,7 @@ export default function Navigation() {
         <div className="max-w-container mx-auto w-full px-6 lg:px-8 flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-grotesk text-lg font-medium text-white hover:text-[#CCCCCC] transition-colors"
+            className={`font-grotesk text-lg font-medium transition-colors ${headerTextClass}`}
           >
             SAMYA SOREN
           </button>
@@ -61,7 +65,7 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="font-grotesk text-base font-normal text-white hover:text-[#CCCCCC] transition-colors duration-300"
+                className={`font-grotesk text-base font-normal transition-colors duration-300 ${headerTextClass}`}
               >
                 {link.label}
               </button>
@@ -73,24 +77,20 @@ export default function Navigation() {
               type="button"
               onClick={toggleTheme}
               aria-label={isLight ? 'Switch to night mode' : 'Switch to day mode'}
-              className={`inline-flex items-center justify-center rounded-full border-[1.5px] px-7 py-2.5 font-grotesk text-base font-medium transition-all duration-300 ${
-                isLight
-                  ? 'border-black text-black hover:bg-black hover:text-white'
-                  : 'border-white text-white hover:bg-white hover:text-black'
-              }`}
+              className={`inline-flex items-center justify-center rounded-full border-[1.5px] px-7 py-2.5 font-grotesk text-base font-medium transition-all duration-300 ${headerButtonClass}`}
             >
               {isLight ? <Moon size={18} /> : <SunMedium size={18} />}
             </button>
             <button
               onClick={openModal}
-              className="font-grotesk text-base font-medium text-white border-[1.5px] border-white rounded-full px-7 py-2.5 hover:bg-white hover:text-black transition-all duration-300"
+              className={`font-grotesk text-base font-medium rounded-full px-7 py-2.5 transition-all duration-300 border-[1.5px] ${headerButtonClass}`}
             >
               Let&apos;s Talk
             </button>
           </div>
 
           <button
-            className="md:hidden text-white"
+            className={`md:hidden transition-colors ${headerTextClass}`}
             onClick={() => setMobileOpen(true)}
           >
             <Menu size={24} />
