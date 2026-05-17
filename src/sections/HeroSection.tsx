@@ -111,12 +111,9 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(circle at 18% 28%, rgba(255,45,45,0.22) 0%, transparent 48%),
-              radial-gradient(circle at 80% 22%, rgba(33,229,106,0.2) 0%, transparent 48%),
-              radial-gradient(circle at 18% 82%, rgba(31,123,255,0.2) 0%, transparent 50%),
-              radial-gradient(circle at 82% 78%, rgba(155,69,255,0.2) 0%, transparent 50%),
-              radial-gradient(circle at 55% 52%, rgba(255,154,31,0.18) 0%, transparent 52%),
-              linear-gradient(135deg, rgba(255,45,45,0.06) 0%, rgba(33,229,106,0.06) 25%, rgba(31,123,255,0.06) 50%, rgba(155,69,255,0.06) 75%, rgba(255,154,31,0.06) 100%)
+              radial-gradient(circle at 50% 35%, rgba(255,255,255,0.12) 0%, transparent 42%),
+              radial-gradient(circle at 50% 70%, rgba(0,0,0,0.28) 0%, transparent 55%),
+              linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.32) 100%)
             `,
           }}
         />
