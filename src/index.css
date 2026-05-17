@@ -111,6 +111,10 @@
     mix-blend-mode: screen;
   }
 
+  .hero-hero-video {
+    filter: saturate(1.15) contrast(1.05) brightness(0.92);
+  }
+
   .hero-ai-lines path {
     stroke-dasharray: 10 14;
     animation: hero-ai-dash 22s linear infinite;
