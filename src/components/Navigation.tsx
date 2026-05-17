@@ -114,7 +114,11 @@ export default function Navigation() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-white px-5 py-2.5 text-white transition-all duration-300 hover:bg-white hover:text-black"
+            className={`inline-flex items-center gap-2 rounded-full border-[1.5px] px-5 py-2.5 transition-all duration-300 ${
+              isLight
+                ? 'border-black text-black hover:bg-black hover:text-white'
+                : 'border-white text-white hover:bg-white hover:text-black'
+            }`}
           >
             {isLight ? <Moon size={18} /> : <SunMedium size={18} />}
             {isLight ? 'Night Mode' : 'Day Mode'}
