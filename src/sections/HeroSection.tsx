@@ -95,10 +95,11 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
         >
           <defs>
             <linearGradient id="heroAiGradient" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stopColor="#3B5DFF" stopOpacity="0.9" />
-              <stop offset="0.45" stopColor="#1CC389" stopOpacity="0.75" />
-              <stop offset="0.75" stopColor="#FA900E" stopOpacity="0.65" />
-              <stop offset="1" stopColor="#7E43FF" stopOpacity="0.8" />
+              <stop offset="0" stopColor="#3B5DFF" stopOpacity="0.95" />
+              <stop offset="0.25" stopColor="#1CC389" stopOpacity="0.85" />
+              <stop offset="0.5" stopColor="#FA900E" stopOpacity="0.8" />
+              <stop offset="0.72" stopColor="#F03030" stopOpacity="0.78" />
+              <stop offset="1" stopColor="#7E43FF" stopOpacity="0.9" />
             </linearGradient>
           </defs>
           <g className="hero-ai-lines" stroke="url(#heroAiGradient)" strokeWidth="1.25" strokeLinecap="round">
@@ -131,7 +132,7 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%)',
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.55) 100%)',
           }}
         />
       </div>
@@ -141,10 +142,11 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(circle at 20% 30%, rgba(59,93,255,0.15) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(250,144,14,0.12) 0%, transparent 50%),
-              radial-gradient(circle at 15% 85%, rgba(28,195,137,0.1) 0%, transparent 50%),
-              radial-gradient(circle at 85% 80%, rgba(126,67,255,0.1) 0%, transparent 50%)
+              radial-gradient(circle at 20% 30%, rgba(59,93,255,0.2) 0%, transparent 55%),
+              radial-gradient(circle at 80% 20%, rgba(250,144,14,0.18) 0%, transparent 55%),
+              radial-gradient(circle at 15% 85%, rgba(28,195,137,0.16) 0%, transparent 55%),
+              radial-gradient(circle at 85% 80%, rgba(126,67,255,0.18) 0%, transparent 55%),
+              radial-gradient(circle at 55% 55%, rgba(240,48,48,0.16) 0%, transparent 58%)
             `,
           }}
         />

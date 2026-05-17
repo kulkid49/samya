@@ -8,7 +8,7 @@ const education = [
       'Indian Institute of Engineering Science and Technology, Shibpur (Formerly Bengal Engineering and Science University)',
     degree: 'Grad · Batch of 2009 – 2013 · Shibpur',
     details:
-      'Pursued Bachelor of Engineering in Computer Science and Technology with a CGPA of 6 and holds the degree for the year 2014.',
+      'Pursued Bachelor of Engineering in Computer Science and Technology with a CGPA of 6 and holds the degree for the year 2013.',
     accent: '#3B5DFF',
   },
   {
@@ -184,29 +184,35 @@ export default function EducationSection() {
               <Award size={20} className="text-brand-green" />
               <h3 className="font-grotesk text-xl font-medium text-white">Certifications</h3>
             </div>
-            <div className="space-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
               {certifications.map((cert, i) => (
                 <div
                   key={i}
-                  className="education-animate-item scroll-hidden bg-[#1A1A1A] rounded-xl p-7"
+                  className="education-animate-item scroll-hidden bg-[#1A1A1A] rounded-lg p-4 border border-white/[0.06]"
                   style={{
-                    borderLeft: `4px solid ${cert.accent}`,
                     animationDelay: `${i * 100}ms`,
                   }}
                 >
-                  <p className="font-grotesk text-base font-medium text-white">
-                    {cert.title}
-                  </p>
-                  {cert.link ? (
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-grotesk text-sm text-brand-blue hover:underline mt-2 inline-block"
-                    >
-                      View Certificate →
-                    </a>
-                  ) : null}
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5">
+                      <Award size={16} style={{ color: cert.accent }} />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="font-grotesk text-[13px] font-medium text-white leading-snug">
+                        {cert.title}
+                      </p>
+                      {cert.link ? (
+                        <a
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-grotesk text-[12px] text-brand-blue hover:underline mt-2 inline-block"
+                        >
+                          Certificate →
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
