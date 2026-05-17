@@ -36,6 +36,10 @@ export default function Navigation() {
   const headerButtonClass = isLight
     ? 'border-black text-black hover:bg-black hover:text-white'
     : 'border-white text-white hover:bg-white hover:text-black';
+  const mobileMenuStyle = {
+    backgroundColor: isLight ? '#ffffff' : '#000000',
+    color: isLight ? '#000000' : '#ffffff',
+  } as const;
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -100,12 +104,12 @@ export default function Navigation() {
 
       {mobileOpen && (
         <div
-          className={`theme-preserve fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-8 ${
-            isLight ? 'bg-white' : 'bg-black'
-          }`}
+          className="theme-preserve fixed inset-0 z-[9999] flex flex-col items-center justify-start gap-8 overflow-y-auto px-6 pt-24"
+          style={mobileMenuStyle}
         >
           <button
-            className={isLight ? 'absolute top-6 right-6 text-black' : 'absolute top-6 right-6 text-white'}
+            className="absolute top-6 right-6"
+            style={{ color: isLight ? '#000000' : '#ffffff' }}
             onClick={() => setMobileOpen(false)}
           >
             <X size={28} />
@@ -114,9 +118,8 @@ export default function Navigation() {
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className={`font-grotesk text-2xl font-medium transition-colors ${
-                isLight ? 'text-black hover:text-[#4A4A4A]' : 'text-white hover:text-[#CCCCCC]'
-              }`}
+              className="font-grotesk text-2xl font-medium transition-colors text-current"
+              style={{ color: isLight ? '#000000' : '#ffffff' }}
             >
               {link.label}
             </button>
@@ -124,11 +127,11 @@ export default function Navigation() {
           <button
             type="button"
             onClick={toggleTheme}
-            className={`inline-flex items-center gap-2 rounded-full border-[1.5px] px-5 py-2.5 transition-all duration-300 ${
-              isLight
-                ? 'border-black text-black hover:bg-black hover:text-white'
-                : 'border-white text-white hover:bg-white hover:text-black'
-            }`}
+            className="inline-flex items-center gap-2 rounded-full border-[1.5px] px-5 py-2.5 transition-all duration-300"
+            style={{
+              borderColor: isLight ? '#000000' : '#ffffff',
+              color: isLight ? '#000000' : '#ffffff',
+            }}
           >
             {isLight ? <Moon size={18} /> : <SunMedium size={18} />}
             {isLight ? 'Night Mode' : 'Day Mode'}
@@ -138,11 +141,11 @@ export default function Navigation() {
               setMobileOpen(false);
               openModal();
             }}
-            className={`font-grotesk text-xl font-medium rounded-full px-8 py-3 transition-all duration-300 mt-4 ${
-              isLight
-                ? 'text-black border-[1.5px] border-black hover:bg-black hover:text-white'
-                : 'text-white border-[1.5px] border-white hover:bg-white hover:text-black'
-            }`}
+            className="font-grotesk text-xl font-medium rounded-full px-8 py-3 transition-all duration-300 mt-4 border-[1.5px]"
+            style={{
+              borderColor: isLight ? '#000000' : '#ffffff',
+              color: isLight ? '#000000' : '#ffffff',
+            }}
           >
             Let&apos;s Talk
           </button>
