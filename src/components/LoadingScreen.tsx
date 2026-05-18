@@ -11,7 +11,12 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const lettersRef = useRef<HTMLSpanElement[]>([]);
   const { theme, resolvedTheme } = useTheme();
   const [isLight, setIsLight] = useState(() => {
-    if (typeof document === 'undefined') return false;
+    if (typeof window === 'undefined') return false;
+
+    const storedTheme = window.localStorage.getItem('theme');
+    if (storedTheme === 'light') return true;
+    if (storedTheme === 'dark') return false;
+
     return document.documentElement.classList.contains('light');
   });
 
