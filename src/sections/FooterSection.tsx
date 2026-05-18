@@ -55,14 +55,14 @@ export default function FooterSection() {
               href="mailto:samyasoren1991@gmail.com"
               className="flex items-center gap-2 font-grotesk text-sm text-[#7F7F7F] hover:text-white transition-colors duration-200"
             >
-              <Mail size={14} className="text-brand-blue" />
+              <Mail size={14} className="text-[#F03030]" />
               samyasoren1991@gmail.com
             </a>
             <a
               href="tel:+919681517142"
               className="flex items-center gap-2 font-grotesk text-sm text-[#7F7F7F] hover:text-white transition-colors duration-200"
             >
-              <Phone size={14} className="text-brand-blue" />
+              <Phone size={14} className="text-[#F03030]" />
               +91 9681517142
             </a>
             <a
@@ -71,7 +71,7 @@ export default function FooterSection() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-grotesk text-sm text-[#7F7F7F] hover:text-white transition-colors duration-200"
             >
-              <Linkedin size={14} className="text-brand-blue" />
+              <Linkedin size={14} className="text-[#F03030]" />
               linkedin.com/in/samyasoren
             </a>
             <a
@@ -80,7 +80,7 @@ export default function FooterSection() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-grotesk text-sm text-[#7F7F7F] hover:text-white transition-colors duration-200"
             >
-              <Github size={14} className="text-brand-blue" />
+              <Github size={14} className="text-[#F03030]" />
               github.com/kulkid49
             </a>
           </div>
