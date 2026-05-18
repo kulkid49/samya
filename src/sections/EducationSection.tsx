@@ -8,21 +8,21 @@ const education = [
       'Indian Institute of Engineering Science and Technology, Shibpur (Formerly Bengal Engineering and Science University)',
     degree: 'Grad · Batch of 2009 – 2013 · Shibpur',
     details:
-      'Pursued Bachelor of Engineering in Computer Science and Technology with a CGPA of 6 and holds the degree for the year 2013.',
+      'Pursued Bachelor of Engineering in Computer Science and Technology.',
     accent: '#3B5DFF',
   },
   {
     institution: 'Bidhan Chandra Institution',
     degree: 'Higher Secondary School (WBCHSE) · Batch of 2007 – 2009 · Durgapur',
     details:
-      'Completed High School with Science Subjects (Physics, Chemistry, and Mathematics) along with the Compulsory Subjects (English and Bengali) and the Additional Subject (Computer Science) with a percentage of marks obtained of 71 and holds the degree for the year 2009.',
+      'Completed High School with Science Subjects (Physics, Chemistry, and Mathematics) along with the Compulsory Subjects (English and Bengali) and the Additional Subject (Computer Science).',
     accent: '#1CC389',
   },
   {
     institution: "St. Xavier's School",
     degree: 'Secondary School (ICSE) · Batch of 1996 – 2007 · Durgapur',
     details:
-      'Completed Secondary School with Compulsory Subjects (English, Bengali, History, Geography, Science, and Mathematics) along with the Additional Subject (Economics) with a percentage of marks obtained of 81 and holds the degree for the year 2007.',
+      'Completed Secondary School with Compulsory Subjects (English, Bengali, History, Geography, Science, and Mathematics) along with the Additional Subject (Economics).',
     accent: '#FA900E',
   },
 ];
