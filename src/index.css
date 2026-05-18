@@ -59,30 +59,6 @@
   html {
     scroll-behavior: smooth;
   }
-
-  html.light #root {
-    filter: invert(1) hue-rotate(180deg);
-  }
-
-  html.light #root img,
-  html.light #root picture,
-  html.light #root video,
-  html.light #root svg,
-  html.light #root canvas {
-    filter: invert(1) hue-rotate(180deg);
-  }
-
-  html.light .theme-preserve {
-    filter: invert(1) hue-rotate(180deg);
-  }
-
-  html.light .theme-preserve img,
-  html.light .theme-preserve picture,
-  html.light .theme-preserve video,
-  html.light .theme-preserve svg,
-  html.light .theme-preserve canvas {
-    filter: none !important;
-  }
 }
 
 @layer utilities {
