@@ -145,7 +145,7 @@ export default function HeroSection({ isLoading }: HeroSectionProps) {
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mt-10">
           <a
             href="#projects"
-            className="font-grotesk text-lg font-medium bg-white text-black rounded-full px-8 py-3.5 hover:bg-[#CCCCCC] transition-colors duration-300 text-center"
+            className="font-grotesk text-lg font-medium bg-[#D4AF37] text-black rounded-full px-8 py-3.5 hover:bg-[#E2C35A] transition-all duration-300 text-center shadow-[0_6px_0_#7D5A12,0_14px_24px_rgba(0,0,0,0.28)] hover:translate-y-[-1px] hover:shadow-[0_7px_0_#7D5A12,0_16px_26px_rgba(0,0,0,0.3)]"
           >
             View My Work
           </a>
