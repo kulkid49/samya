@@ -57,7 +57,7 @@ export default function ContactModal() {
   return (
     <div className="theme-preserve fixed inset-0 z-[6666]" onClick={closeModal}>
       <div
-        className={isLight ? 'absolute inset-0 bg-black/45 backdrop-blur-sm' : 'absolute inset-0 bg-black/85 backdrop-blur-sm'}
+        className={isLight ? 'absolute inset-0 bg-white' : 'absolute inset-0 bg-black/85 backdrop-blur-sm'}
         style={{ animation: 'fadeIn 0.3s ease-out' }}
       />
       <div
@@ -67,7 +67,7 @@ export default function ContactModal() {
         }`}
         style={{
           animation: 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-          boxShadow: '0px -8px 40px rgba(0, 0, 0, 0.4)',
+          boxShadow: isLight ? '0px -8px 40px rgba(0, 0, 0, 0.12)' : '0px -8px 40px rgba(0, 0, 0, 0.4)',
         }}
         onClick={(e) => e.stopPropagation()}
       >
