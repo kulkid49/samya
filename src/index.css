@@ -21,6 +21,9 @@
     --accent-pink: #F85993;
     --white-hover: #CCCCCC;
     --blue-hover: #5B7AFF;
+    --gold-primary: #D4AF37;
+    --gold-highlight: #F6DD8B;
+    --gold-shadow: #7D5A12;
     --form-focus: #222222;
     --container: 1200px;
     --container-narrow: 1040px;
@@ -58,6 +61,29 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  #root [class*='text-white'] {
+    color: var(--gold-primary) !important;
+    text-shadow:
+      0 1px 0 rgba(125, 90, 18, 0.95),
+      0 2px 0 rgba(90, 64, 10, 0.9),
+      0 3px 0 rgba(66, 47, 8, 0.78),
+      0 6px 12px rgba(0, 0, 0, 0.38);
+  }
+
+  #root [class*='border-white'] {
+    border-color: var(--gold-primary) !important;
+  }
+
+  #root [class*='hover:text-white']:hover,
+  #root [class*='hover:text-white']:focus-visible {
+    color: var(--gold-highlight) !important;
+  }
+
+  #root [class*='hover:bg-white']:hover,
+  #root [class*='hover:bg-white']:focus-visible {
+    background-color: rgba(212, 175, 55, 0.12) !important;
   }
 }
 
