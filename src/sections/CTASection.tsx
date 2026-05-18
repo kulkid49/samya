@@ -68,7 +68,7 @@ export default function CTASection() {
         >
           <a
             href="mailto:samyasoren1991@gmail.com"
-            className="font-grotesk text-lg font-medium bg-brand-blue text-white rounded-full px-9 py-4 hover:bg-[#5B7AFF] transition-colors duration-300"
+            className="font-grotesk text-lg font-medium bg-[#F03030] text-black rounded-full px-9 py-4 hover:bg-[#ff4d4d] transition-colors duration-300"
           >
             Send an Email
           </a>
