@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Samya Soren - Portfolio</title>
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme');
+          var root = document.documentElement;
+
+          if (theme === 'light') {
+            root.classList.add('light');
+            root.classList.remove('dark');
+          } else if (theme === 'dark') {
+            root.classList.add('dark');
+            root.classList.remove('light');
+          }
+        } catch (error) {
+          // Ignore storage access failures and let the app decide later.
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
